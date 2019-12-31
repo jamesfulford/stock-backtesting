@@ -32,8 +32,13 @@ def evaluate_trades(trades, histories, start, end):
         total_unrealized += unrealized
 
     period_roi = net / total_in
-    print("\n\t\tROI: {:.2f}% ({} to {})".format(100 * period_roi, start.strftime("%Y/%m/%d"), end.strftime("%Y/%m/%d")))
     # TODO(james.fulford): Fix this, days isn't number of trading days
     # annual_roi = period_roi * (252 / days)
     # print("\t\tAnnualized ROI: {:.2f}%".format(100 * annual_roi))
-    # TODO(james.fulford): What should this return?
+    return {
+        "net": net,
+        "total_in": total_in,
+        "total_out": total_out,
+        "total_unrealized": total_unrealized,
+        "period_roi": period_roi,
+    }

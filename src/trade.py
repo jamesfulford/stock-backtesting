@@ -18,3 +18,10 @@ class Trade():
     @property
     def closing_value(self):
         return abs(self.quantity * self.stock_day.closing)
+    
+    def to_dict(self):
+        return {
+            "symbol": self.symbol,
+            "stock_day": self.stock_day.to_dict(),
+            "quantity": self.quantity,
+        }

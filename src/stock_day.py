@@ -20,3 +20,14 @@ class StockDay():
             high=self.high,
             volume=self.volume
         )
+    
+    def to_dict(self):
+        return {
+            "symbol": self.symbol,
+            "timestamp": self.timestamp.strftime('%Y-%m-%d'),
+            "opening": self.opening,
+            "closing": self.closing,
+            "low": self.low,
+            "high": self.high,
+            "volume": self.volume,
+        }
