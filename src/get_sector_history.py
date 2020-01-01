@@ -1,7 +1,7 @@
 from .sectors import get_sector_stocks, sectors as default_sectors
 from .get_stock_history import get_stock_history
 
-def get_sector_histories(days_back: int, sectors=default_sectors):
+def get_sector_histories(start, end, sectors=default_sectors):
     # Gather Data from API
     sector_stock_histories = {}
 
@@ -15,7 +15,7 @@ def get_sector_histories(days_back: int, sectors=default_sectors):
             # performance gains were limited due to rate limiting of API
             # and also a big headache.
             # Don't try to parallelize this again, it isn't worth it
-            stock_history = get_stock_history(stock, days=days_back)
+            stock_history = get_stock_history(stock, start, end)
             print(stock_history)
             if len(stock_history.days) > 0:
                 histories.append(stock_history)
