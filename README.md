@@ -1,6 +1,10 @@
 # stock-backtesting
 Stock Backtesting Notebook and Script
 
+TODO(james.fulford): Collect more days in past for Moving Average reasons
+TODO(james.fulford): Collect higher resolution data (not daily, but hourly or something)
+TODO(james.fulford): Collect earnings data (?)
+
 ## Setup
 1. [Register for a Finnhub.io token](https://finnhub.io/register).
 

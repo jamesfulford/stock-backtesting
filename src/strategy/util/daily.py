@@ -5,7 +5,7 @@ def by_day(histories):
     for history in histories:
         # move this to stock history class:
         for day in history.days:
-            index = day.timestamp.strftime("%Y/%m/%d")
+            index = day.timestamp.strftime("%Y-%m-%d")
             if index not in day_symbol_map:
                 day_symbol_map[index] = {}
 
